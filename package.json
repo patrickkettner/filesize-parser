@@ -1,10 +1,10 @@
 {
   "name": "filesize-parser",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Takes human readable filesystem size strings and gives you an int representing that many bytes.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
