@@ -1,0 +1,18 @@
+{
+  "name": "filesize-parser",
+  "version": "0.0.1",
+  "description": "Takes human readable filesystem size strings and gives you an int representing that many bytes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/patrickkettner/filesize-parser"
+  },
+  "author": "Patrick Kettner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/patrickkettner/filesize-parser/issues"
+  }
+}
