@@ -28,3 +28,42 @@ assert.throws(function() {filesizeParser('I command thee to break');});
 
 //empty input should throw an error
 assert.throws(function() {filesizeParser('');});
+
+// base 10
+//general usage
+assert.equal(filesizeParser('1kb', {base: 10}), 1000);
+
+//any casing should would
+assert.equal(filesizeParser('1KB', {base: 10}), 1000);
+
+//IEEE1541-style prefixes should work
+assert.equal(filesizeParser('1KiB', {base: 10}), 1000);
+
+// Mega
+//general usage
+assert.equal(filesizeParser('1mb', {base: 10}), 1000000);
+
+//any casing should would
+assert.equal(filesizeParser('1MB', {base: 10}), 1000000);
+
+//IEEE1541-style prefixes should work
+assert.equal(filesizeParser('1MiB', {base: 10}), 1000000);
+
+//passing in ints should just return those ints
+assert.equal(filesizeParser(100, {base: 10}), 100);
+assert.equal(filesizeParser('100', {base: 10}), 100);
+
+//if you /reallllly/ want kilobits...
+assert.equal(filesizeParser('1Kb', {base: 10}), 125);
+
+//ignore whitespace, even stupid amounts of it
+assert.equal(filesizeParser('1                     KB', {base: 10}), 1000);
+
+//unknown units should throw an error
+assert.throws(function() {filesizeParser('1pk', {base: 10});});
+
+//nonsense should throw an error
+assert.throws(function() {filesizeParser('I command thee to break', {base: 10});});
+
+//empty input should throw an error
+assert.throws(function() {filesizeParser('', {baase: 10});});

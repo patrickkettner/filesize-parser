@@ -14,5 +14,11 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/patrickkettner/filesize-parser/issues"
-  }
+  },
+  "contributors": [
+    {
+      "name": "Manfred Touron",
+      "url": "https://github.com/moul"
+    }
+  ]
 }
