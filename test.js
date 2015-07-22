@@ -6,6 +6,7 @@ assert.equal(filesizeParser('1kb'), 1024);
 
 //any casing should would
 assert.equal(filesizeParser('1KB'), 1024);
+assert.equal(filesizeParser('1mb'), 1024*1024);
 
 //IEEE1541-style prefixes should work
 assert.equal(filesizeParser('1KiB'), 1024);
