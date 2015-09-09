@@ -21,6 +21,23 @@ assert.equal(filesizeParser('1Kb'), 128);
 //ignore whitespace, even stupid amounts of it
 assert.equal(filesizeParser('1                     KB'), 1024);
 
+//IEEE1541-prefix only should work
+assert.equal(filesizeParser('1Ki'),1024);
+assert.equal(filesizeParser('1Mi'),1048576);
+assert.equal(filesizeParser('1Gi'),1073741824);
+assert.equal(filesizeParser('1Ti'),1099511627776);
+assert.equal(filesizeParser('1Pi'),1125899906842624);
+assert.equal(filesizeParser('1Ei'),1152921504606846976);
+
+//decimal notation should work
+assert.equal(filesizeParser('2.5Ti'),2748779069440);
+
+//comma as decimal separator should work
+assert.equal(filesizeParser('2,5Ti'),2748779069440);
+
+//lower case should work
+assert.equal(filesizeParser('2ti'),2199023255552);
+
 //unknown units should throw an error
 assert.throws(function() {filesizeParser('1pk');});
 
@@ -44,6 +61,12 @@ assert.equal(filesizeParser('1KiB', {base: 10}), 1000);
 //general usage
 assert.equal(filesizeParser('1mb', {base: 10}), 1000000);
 
+//period as decimal separator should work
+assert.equal(filesizeParser('1.5mb', {base: 10}), 1500000);
+
+//comma as decimal separator should work
+assert.equal(filesizeParser('1,5mb', {base: 10}), 1500000);
+
 //any casing should would
 assert.equal(filesizeParser('1MB', {base: 10}), 1000000);
 
@@ -59,6 +82,14 @@ assert.equal(filesizeParser('1Kb', {base: 10}), 125);
 
 //ignore whitespace, even stupid amounts of it
 assert.equal(filesizeParser('1                     KB', {base: 10}), 1000);
+
+//IEEE1541-prefix only should work
+assert.equal(filesizeParser('1Ki', {base: 10}),1000);
+assert.equal(filesizeParser('1Mi', {base: 10}),1000000);
+assert.equal(filesizeParser('1Gi', {base: 10}),1000000000);
+assert.equal(filesizeParser('1Ti', {base: 10}),1000000000000);
+assert.equal(filesizeParser('1Pi', {base: 10}),1000000000000000);
+assert.equal(filesizeParser('1Ei', {base: 10}),1000000000000000000);
 
 //unknown units should throw an error
 assert.throws(function() {filesizeParser('1pk', {base: 10});});
