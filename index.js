@@ -10,32 +10,32 @@ var incrementBases = {
   2: [
     [["B", "Bytes"], 1],
     [["Kb"], 128],
-    [["k", "K", "kb", "KB", "KiB"], 1024],
+    [["k", "K", "kb", "KB", "KiB", "Ki", "ki"], 1024],
     [["Mb"], 131072],
-    [["m", "M", "mb", "MB", "MiB"], Math.pow(1024, 2)],
+    [["m", "M", "mb", "MB", "MiB", "Mi", "mi"], Math.pow(1024, 2)],
     [["Gb"], 1.342e+8],
-    [["g", "G", "gb", "GB", "GiB"], Math.pow(1024, 3)],
+    [["g", "G", "gb", "GB", "GiB", "Gi", "gi"], Math.pow(1024, 3)],
     [["Tb"], 1.374e+11],
-    [["t", "T", "tb", "TB", "TiB"], Math.pow(1024, 4)],
+    [["t", "T", "tb", "TB", "TiB", "Ti", "ti"], Math.pow(1024, 4)],
     [["Pb"], 1.407e+14],
-    [["p", "P", "pb", "PB", "PiB"], Math.pow(1024, 5)],
+    [["p", "P", "pb", "PB", "PiB", "Pi", "pi"], Math.pow(1024, 5)],
     [["Eb"], 1.441e+17],
-    [["e", "E", "eb", "EB", "EiB"], Math.pow(1024, 6)]
+    [["e", "E", "eb", "EB", "EiB", "Ei", "ei"], Math.pow(1024, 6)]
   ],
   10: [
     [["B", "Bytes"], 1],
     [["Kb"], 125],
-    [["k", "K", "kb", "KB", "KiB"], 1000],
+    [["k", "K", "kb", "KB", "KiB", "Ki", "ki"], 1000],
     [["Mb"], 125000],
-    [["m", "M", "mb", "MB", "MiB"], 1.0e+6],
+    [["m", "M", "mb", "MB", "MiB", "Mi", "mi"], 1.0e+6],
     [["Gb"], 1.25e+8],
-    [["g", "G", "gb", "GB", "GiB"], 1.0e+9],
+    [["g", "G", "gb", "GB", "GiB", "Gi", "gi"], 1.0e+9],
     [["Tb"], 1.25e+11],
-    [["t", "T", "tb", "TB", "TiB"], 1.0e+12],
+    [["t", "T", "tb", "TB", "TiB", "Ti", "ti"], 1.0e+12],
     [["Pb"], 1.25e+14],
-    [["p", "P", "pb", "PB", "PiB"], 1.0e+15],
+    [["p", "P", "pb", "PB", "PiB", "Pi", "pi"], 1.0e+15],
     [["Eb"], 1.25e+17],
-    [["e", "E", "eb", "EB", "EiB"], 1.0e+18]
+    [["e", "E", "eb", "EB", "EiB", "Ei", "ei"], 1.0e+18]
   ]
 };
 
@@ -45,7 +45,7 @@ module.exports = function (input) {
   var base = parseInt(options.base || 2);
 
   var parsed = input.toString().match(/^([0-9\.,]*)(?:\s*)?(.*)$/);
-  var amount = parsed[1];
+  var amount = parsed[1].replace(',','.');
   var unit = parsed[2];
 
   var validUnit = function(sourceUnit) {
