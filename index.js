@@ -57,7 +57,7 @@ module.exports = function (input) {
   }
   if (unit === '') return amount;
 
-  increments = incrementBases[base];
+  var increments = incrementBases[base];
   for (var i = 0; i < increments.length; i++) {
     var _increment = increments[i];
 
