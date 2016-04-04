@@ -55,7 +55,7 @@ module.exports = function (input) {
   if (!validAmount(amount) || !parsableUnit(unit)) {
     throw 'Can\'t interpret ' + (input || 'a blank string');
   }
-  if (unit === '') return amount;
+  if (unit === '') return Number(amount);
 
   var increments = incrementBases[base];
   for (var i = 0; i < increments.length; i++) {
