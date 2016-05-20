@@ -18,6 +18,10 @@ assert.equal(filesizeParser('100'), 100);
 //if you /reallllly/ want kilobits...
 assert.equal(filesizeParser('1Kb'), 128);
 
+//passing in bits should work
+assert.equal(filesizeParser('1000b'), 125);
+assert.equal(filesizeParser('1000bits'), 125);
+
 //ignore whitespace, even stupid amounts of it
 assert.equal(filesizeParser('1                     KB'), 1024);
 
