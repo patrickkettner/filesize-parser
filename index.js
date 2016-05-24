@@ -57,14 +57,14 @@ module.exports = function (input) {
   if (!validAmount(amount) || !parsableUnit(unit)) {
     throw 'Can\'t interpret ' + (input || 'a blank string');
   }
-  if (unit === '') return Number(amount);
+  if (unit === '') return Math.ceil(Number(amount));
 
   var increments = incrementBases[base];
   for (var i = 0; i < increments.length; i++) {
     var _increment = increments[i];
 
     if (_increment[0].some(validUnit)) {
-      return amount * _increment[1];
+      return Math.ceil(amount * _increment[1]);
     }
   }
 

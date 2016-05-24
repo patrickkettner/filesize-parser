@@ -42,6 +42,10 @@ assert.equal(filesizeParser('2,5Ti'),2748779069440);
 //lower case should work
 assert.equal(filesizeParser('2ti'),2199023255552);
 
+//don't return floating numbers
+assert.equal(filesizeParser('2.156KiB'),2208);
+assert.equal(filesizeParser('100.1'),101);
+
 //unknown units should throw an error
 assert.throws(function() {filesizeParser('1pk');});
 
@@ -94,6 +98,9 @@ assert.equal(filesizeParser('1Gi', {base: 10}),1000000000);
 assert.equal(filesizeParser('1Ti', {base: 10}),1000000000000);
 assert.equal(filesizeParser('1Pi', {base: 10}),1000000000000000);
 assert.equal(filesizeParser('1Ei', {base: 10}),1000000000000000000);
+
+//don't return floating numbers
+assert.equal(filesizeParser('2.1562Ki', {base: 10}),2157);
 
 //unknown units should throw an error
 assert.throws(function() {filesizeParser('1pk', {base: 10});});
