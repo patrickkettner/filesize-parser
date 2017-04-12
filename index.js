@@ -8,8 +8,8 @@ var parsableUnit = function(u) {
 
 var incrementBases = {
   2: [
-    [["b", "bits"], 1/8],
-    [["B", "Bytes"], 1],
+    [["b", "bit", "bits"], 1/8],
+    [["B", "Byte", "Bytes"], 1],
     [["Kb"], 128],
     [["k", "K", "kb", "KB", "KiB", "Ki", "ki"], 1024],
     [["Mb"], 131072],
