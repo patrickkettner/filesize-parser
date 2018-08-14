@@ -24,8 +24,8 @@ var incrementBases = {
     [["e", "E", "eb", "EB", "EiB", "Ei", "ei"], Math.pow(1024, 6)]
   ],
   10: [
-    [["b", "bits"], 1/8],
-    [["B", "Bytes"], 1],
+    [["b", "bit", "bits"], 1/8],
+    [["B", "Byte", "Bytes"], 1],
     [["Kb"], 125],
     [["k", "K", "kb", "KB", "KiB", "Ki", "ki"], 1000],
     [["Mb"], 125000],
