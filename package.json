@@ -1,6 +1,6 @@
 {
   "name": "filesize-parser",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Takes human readable filesystem size strings and gives you an int representing that many bytes.",
   "main": "index.js",
   "scripts": {
@@ -19,6 +19,9 @@
     {
       "name": "Manfred Touron",
       "url": "https://github.com/moul"
+    }, {
+      "name": "Nicolas Pouillard",
+      "url": "https://github.com/np"
     }
   ]
 }
