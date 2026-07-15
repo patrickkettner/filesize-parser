@@ -30,3 +30,7 @@ filesizeParser('200KB', {base: 10})
 filesizeParser('200Kb', {base: 10})
 25000
 ```
+
+## TypeScript
+
+Type definitions are bundled with the package, so `@types/filesize-parser` is no longer needed.

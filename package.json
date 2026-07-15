@@ -3,6 +3,7 @@
   "version": "1.5.1",
   "description": "Takes human readable filesystem size strings and gives you an int representing that many bytes.",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "node test.js"
   },
